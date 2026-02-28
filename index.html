@@ -14,6 +14,19 @@
 
 <body>
 
+    <!-- 顶部标签导航 -->
+    <nav class="top-tabs-nav" id="topNav">
+        <button class="tab-btn active" data-target="tab-pricing">选膜套餐</button>
+        <button class="tab-btn" data-target="tab-parameters">参数对比</button>
+        <button class="tab-btn" data-target="tab-intro">品牌介绍</button>
+        <button class="tab-btn" data-target="tab-service">施工售后</button>
+    </nav>
+
+
+        </div>
+
+    <!-- TAB: 品牌介绍 -->
+    <div id="tab-intro" class="tab-pane">
     <!-- 模块一：Hero 首屏 -->
     <header class="hero">
         <div class="container">
@@ -22,8 +35,8 @@
                 <h2>广州花都唯一运营中心 · CHCC 广州壕马</h2>
                 <p>法国圣戈班旗下 · 359年品质传承 · 不声张的顶级防护</p>
                 <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary">查看套餐价格</a>
-                    <a href="#parameters" class="btn btn-primary"
+                    <a href="#" class="btn btn-primary js-switch-tab" data-target="tab-pricing">查看套餐价格</a>
+                    <a href="#" class="btn btn-primary js-switch-tab" data-target="tab-parameters"
                         style="background: transparent; border: 2px solid var(--cyan-deep);">查看产品参数</a>
                 </div>
             </div>
@@ -124,6 +137,10 @@
         </div>
     </section>
 
+        </div>
+
+    <!-- TAB: 施工售后 -->
+    <div id="tab-service" class="tab-pane">
     <!-- 模块四：贴膜施工流程 -->
     <section class="process" id="process">
         <div class="container">
@@ -196,7 +213,9 @@
         </div>
     </section>
 
-    <!-- 模块五：全部套餐价格 -->
+    <!-- TAB: 选膜套餐 -->
+    <div id="tab-pricing" class="tab-pane active">
+    
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
@@ -435,6 +454,10 @@
         </div>
     </section>
 
+        </div>
+
+    <!-- TAB: 参数对比 -->
+    <div id="tab-parameters" class="tab-pane">
     <!-- 模块六：全部产品参数 -->
     <section class="parameters" id="parameters">
         <div class="container">
@@ -707,45 +730,9 @@
         </div>
     </section>
 
-    <!-- 模块八：常见问题 FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>常见问题 FAQ</h2>
-                <p>消除您的疑虑，明明白白选好膜</p>
-            </div>
+    
 
-            <div class="faq-grid quantum-glass" style="padding: 40px;">
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>金属膜会影响手机信号和车载导航吗？</h3>
-                    <p>完全不会。量子膜采用航天级磁控溅射工艺，使用黄金、银、钛等贵重金属。现代5G频段的电磁波可从金属原子间隙自然穿透，地下车库或偏远山区均实测对信号毫无干扰。</p>
-                </div>
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>前挡为什么只能选70或80系列？</h3>
-                    <p>国家法规强制要求，汽车前挡风玻璃及驾驶员视区透光率须达到70%以上，以保障雨夜行车视线安全。70/80系列即代表透光率≥70%，我们在合规前提下将隔热能力做到了极致。</p>
-                </div>
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>钻石系列和水晶系列怎么选？</h3>
-                    <p>钻石（至尊）：追求终极体验首选，10层金属，3mil双倍防爆厚度，隔热最顶。水晶（顶级）：性价比玩家首选，2mil标准厚度，拥有高达78%透光率的陶瓷透亮清晰视野。</p>
-                </div>
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>10年质保具体"保"的是什么？</h3>
-                    <p>覆盖因膜质量问题引发的：起泡脱层、开胶脱落、自发断裂、胶水聚集成团、视线发黄发彩等。钻石系列更提供业内独享保障：10年内如果用仪器测定您的隔热效果下降超过1%，免费重贴。</p>
-                </div>
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>前后排（侧后挡）选30还是15透光率？</h3>
-                    <p>透光30%：视野更开阔，夜晚倒车看后视镜更清晰。透光15%：私密性更好（外面看不清里面），隔热更强。最流行做法：前门贴30保安全，后门后窗贴15重防晒和隐私。</p>
-                </div>
-                <div class="faq-item">
-                    <h3><span class="faq-icon">Q：</span>为什么强调要去官方授权中心？</h3>
-                    <p>好膜三分靠纸，七分靠贴。钻石系膜比普通膜厚一倍多且金属层娇贵，普通店手工切割、烤枪火候不对极易烤焦或留下卷边气泡。CHCC广州壕马乃官方运营中心，特聘高阶认证技师，配备无尘车间微水施工。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 模块九：选膜推荐引导 -->
-    <section class="recommendation">
+    
         <div class="container">
             <div class="recommendation-banner">
                 <div class="recommend-content quantum-glass">
@@ -795,6 +782,44 @@
         </div>
     </section>
 
+    <!-- 模块八：常见问题 FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题 FAQ</h2>
+                <p>消除您的疑虑，明明白白选好膜</p>
+            </div>
+
+            <div class="faq-grid quantum-glass" style="padding: 40px;">
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>金属膜会影响手机信号和车载导航吗？</h3>
+                    <p>完全不会。量子膜采用航天级磁控溅射工艺，使用黄金、银、钛等贵重金属。现代5G频段的电磁波可从金属原子间隙自然穿透，地下车库或偏远山区均实测对信号毫无干扰。</p>
+                </div>
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>前挡为什么只能选70或80系列？</h3>
+                    <p>国家法规强制要求，汽车前挡风玻璃及驾驶员视区透光率须达到70%以上，以保障雨夜行车视线安全。70/80系列即代表透光率≥70%，我们在合规前提下将隔热能力做到了极致。</p>
+                </div>
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>钻石系列和水晶系列怎么选？</h3>
+                    <p>钻石（至尊）：追求终极体验首选，10层金属，3mil双倍防爆厚度，隔热最顶。水晶（顶级）：性价比玩家首选，2mil标准厚度，拥有高达78%透光率的陶瓷透亮清晰视野。</p>
+                </div>
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>10年质保具体"保"的是什么？</h3>
+                    <p>覆盖因膜质量问题引发的：起泡脱层、开胶脱落、自发断裂、胶水聚集成团、视线发黄发彩等。钻石系列更提供业内独享保障：10年内如果用仪器测定您的隔热效果下降超过1%，免费重贴。</p>
+                </div>
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>前后排（侧后挡）选30还是15透光率？</h3>
+                    <p>透光30%：视野更开阔，夜晚倒车看后视镜更清晰。透光15%：私密性更好（外面看不清里面），隔热更强。最流行做法：前门贴30保安全，后门后窗贴15重防晒和隐私。</p>
+                </div>
+                <div class="faq-item">
+                    <h3><span class="faq-icon">Q：</span>为什么强调要去官方授权中心？</h3>
+                    <p>好膜三分靠纸，七分靠贴。钻石系膜比普通膜厚一倍多且金属层娇贵，普通店手工切割、烤枪火候不对极易烤焦或留下卷边气泡。CHCC广州壕马乃官方运营中心，特聘高阶认证技师，配备无尘车间微水施工。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
     <footer>
         <div class="container">
             <h2 style="color: var(--cyan-light); margin-bottom: 10px;">圣戈班 · 量子膜 Quantum Film</h2>
@@ -804,6 +829,53 @@
                 Reserved.</p>
         </div>
     </footer>
+
+
+    <!-- Tab Switching Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            const jsSwitchBtns = document.querySelectorAll('.js-switch-tab');
+
+            function switchTab(targetId) {
+                // Remove active class from all
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                // Add active class to target
+                const targetBtn = document.querySelector(`.tab-btn[data-target="${targetId}"]`);
+                const targetPane = document.getElementById(targetId);
+                
+                if (targetBtn) targetBtn.classList.add('active');
+                if (targetPane) targetPane.classList.add('active');
+                
+                // Scroll to top of nav
+                const navElement = document.getElementById('topNav');
+                if (navElement) {
+                   window.scrollTo({
+                       top: navElement.offsetTop,
+                       behavior: 'smooth'
+                   });
+                }
+            }
+
+            // Bind top nav clicks
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    switchTab(btn.dataset.target);
+                });
+            });
+
+            // Bind cross-tab links (e.g. hero buttons)
+            jsSwitchBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchTab(btn.dataset.target);
+                });
+            });
+        });
+    </script>
 
 </body>
 
