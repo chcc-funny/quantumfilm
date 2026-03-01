@@ -25,11 +25,18 @@
   font-size: 1.1rem;
   font-weight: 600;
   color: #6B7280;
-  padding: 15px 20px;
+  padding: 15px 12px;
   cursor: pointer;
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 13px 10px;
+  }
 }
 
 .tab-btn:focus-visible {
@@ -1023,9 +1030,16 @@ footer {
   }
 
   .nav-action-btn {
-    padding: 6px 15px;
+    padding: 6px 12px;
     font-size: 0.85rem;
   }
+}
+
+/* pkg-click-hint 内嵌在 scroll-hint 里时需要可见颜色 */
+.scroll-hint .pkg-click-hint {
+  color: var(--cyan-deep);
+  font-weight: 600;
+  opacity: 0.85;
 }
 
 /* ===== 圣戈班 Logo + 股票代码 badge ===== */
