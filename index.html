@@ -225,10 +225,70 @@
 
         .pkg-click-hint {
             font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.3);
+            color: var(--cyan-deep);
+            font-weight: 600;
             text-align: center;
             margin-top: 8px;
             letter-spacing: 0.02em;
+            opacity: 0.85;
+        }
+
+        .tap-icon {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 1px;
+            align-items: center;
+            margin-left: 6px;
+            margin-right: 2px;
+            vertical-align: middle;
+            animation: tap-down 1.2s ease-in-out infinite;
+        }
+
+        .tap-icon span {
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid var(--cyan-deep);
+            opacity: 0;
+        }
+
+        .tap-icon span:nth-child(1) {
+            animation: tap-seq 1.2s 0s ease-in-out infinite;
+        }
+
+        .tap-icon span:nth-child(2) {
+            animation: tap-seq 1.2s 0.18s ease-in-out infinite;
+        }
+
+        .tap-icon span:nth-child(3) {
+            animation: tap-seq 1.2s 0.36s ease-in-out infinite;
+        }
+
+        @keyframes tap-seq {
+
+            0%,
+            50%,
+            100% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes tap-down {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(2px);
+            }
         }
     </style>
 </head>
@@ -266,7 +326,8 @@
                 <div style="margin-bottom: 50px;">
                     <h3 style="color: var(--cyan-deep); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">A.
                         全车套餐（前挡 + 前门 + 后门后挡）</h3>
-                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据
+                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据<span
+                                class="tap-icon"><span></span><span></span><span></span></span>
                             ·</span><span>左右滑动查看完整参数</span><span
                             class="hint-arrow"><span>›</span><span>›</span><span>›</span></span></div>
                     <div class="pricing-table-container quantum-glass-light">
@@ -354,7 +415,8 @@
                 <div style="margin-bottom: 50px;">
                     <h3 style="color: var(--cyan-deep); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">B.
                         混搭定制套餐</h3>
-                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据
+                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据<span
+                                class="tap-icon"><span></span><span></span><span></span></span>
                             ·</span><span>左右滑动查看完整参数</span><span
                             class="hint-arrow"><span>›</span><span>›</span><span>›</span></span></div>
                     <div class="pricing-table-container quantum-glass-light">
@@ -406,7 +468,8 @@
                 <div>
                     <h3 style="color: var(--cyan-deep); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">C.
                         半车套餐（前挡 + 前门）</h3>
-                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据
+                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据<span
+                                class="tap-icon"><span></span><span></span><span></span></span>
                             ·</span><span>左右滑动查看完整参数</span><span
                             class="hint-arrow"><span>›</span><span>›</span><span>›</span></span></div>
                     <div class="pricing-table-container quantum-glass-light">
@@ -503,7 +566,8 @@
                 <div style="margin-bottom: 50px; margin-top: 50px;">
                     <h3 style="color: var(--cyan-deep); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">D.
                         只贴前挡</h3>
-                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据
+                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据<span
+                                class="tap-icon"><span></span><span></span><span></span></span>
                             ·</span><span>左右滑动查看完整参数</span><span
                             class="hint-arrow"><span>›</span><span>›</span><span>›</span></span></div>
                     <div class="pricing-table-container quantum-glass-light">
@@ -555,7 +619,8 @@
                 <div style="margin-bottom: 50px;">
                     <h3 style="color: var(--cyan-deep); margin-bottom: 20px; font-size: 1.5rem; text-align: center;">E.
                         只贴前门（两扇侧窗）</h3>
-                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据
+                    <div class="scroll-hint"><span class="pkg-click-hint" style="margin:0 8px 0 0;">点击列表获详细数据<span
+                                class="tap-icon"><span></span><span></span><span></span></span>
                             ·</span><span>左右滑动查看完整参数</span><span
                             class="hint-arrow"><span>›</span><span>›</span><span>›</span></span></div>
                     <div class="pricing-table-container quantum-glass-light">

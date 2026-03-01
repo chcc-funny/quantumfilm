@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量子膜隔热膜 - 扫码了解详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .poster {
+            /* Quantum Glass Effect */
+            background: linear-gradient(135deg, #80E5F0 0%, #1E8A9A 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            border-radius: 30px;
+            padding: 60px 50px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow:
+                0 8px 32px rgba(30, 138, 154, 0.2),
+                0 2px 8px rgba(30, 138, 154, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        /* Glass shine overlay */
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+            border-radius: 30px 30px 0 0;
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 50px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qrcode-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            display: inline-block;
+            box-shadow:
+                0 4px 16px rgba(30, 138, 154, 0.15),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .qrcode-container img {
+            width: 350px;
+            height: 350px;
+            border-radius: 15px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(30, 138, 154, 0.1);
+        }
+
+        .scan-text {
+            font-size: 28px;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            color: #FFFFFF;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(30, 138, 154, 0.15);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .poster {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <h1 class="title">量子膜隔热膜</h1>
+        <p class="subtitle">详细介绍及对比</p>
+
+        <div class="qrcode-container">
+            <img src="quantumfilm_qrcode.png" alt="量子膜详情二维码">
+        </div>
+
+        <p class="scan-text">📱 扫码查看详情</p>
+        <p class="description">扫描上方二维码</p>
+        <p class="description">了解<span class="highlight">量子膜全系列产品</span></p>
+        <p class="description">查看<span class="highlight">详细参数对比</span></p>
+
+        <div class="features">
+            <div class="feature-item">🌡️ 高效隔热</div>
+            <div class="feature-item">🛡️ 防爆防护</div>
+            <div class="feature-item">☀️ 防紫外线</div>
+            <div class="feature-item">💎 高清透光</div>
+        </div>
+
+        <div class="footer">
+            <div style="font-size: 20px; font-weight: 600; margin-bottom: 10px;">CHCC 广州花都量子膜中心</div>
+            <div>专业汽车隔热膜 · 品质保证</div>
+        </div>
+    </div>
+</body>
+</html>
