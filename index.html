@@ -105,8 +105,28 @@
             font-size: 1.35rem;
             font-weight: 700;
             color: #fff;
-            margin: 0 0 20px;
+            margin: 0 0 12px;
             padding-right: 36px;
+        }
+
+        .pkg-modal-price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .pkg-modal-price-old {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: line-through;
+        }
+
+        .pkg-modal-price-new {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(94, 234, 212, 0.95);
+            letter-spacing: 0.02em;
         }
 
         .pkg-modal-films {
@@ -1297,6 +1317,7 @@
             <button class="pkg-modal-close" id="pkgModalClose" aria-label="关闭">✕</button>
             <p class="pkg-modal-cat" id="pkgModalCat"></p>
             <h2 class="pkg-modal-title" id="pkgModalTitle"></h2>
+            <div class="pkg-modal-price" id="pkgModalPrice"></div>
             <div class="pkg-modal-films" id="pkgModalFilms"></div>
             <div class="pkg-modal-footer" id="pkgModalFooter"></div>
         </div>
@@ -1322,34 +1343,34 @@
         // films: [{pos, film}] — film 可以是单个型号名，或 [型号A, 型号B]（可选透光率）
         var PKG_DATA = {
             // A. 全车套餐
-            1: { name: '💎 至尊全防护', cat: 'A · 全车套餐', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }, { pos: '后门+后挡', film: '钻石25' }] },
-            2: { name: '💫 至尊豪华', cat: 'A · 全车套餐', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['水晶30', '水晶15'] }] },
-            3: { name: '🔮 至尊标准', cat: 'A · 全车套餐', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钛金16' }, { pos: '后门+后挡', film: '钛金16' }] },
-            4: { name: '⚡ 至尊经济', cat: 'A · 全车套餐', warranty: '前挡10年+侧后5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
-            5: { name: '🔷 顶级尊享', cat: 'A · 全车套餐', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['水晶30', '水晶15'] }] },
-            6: { name: '🌟 顶级标准', cat: 'A · 全车套餐', warranty: '前挡10年+侧后5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
-            7: { name: '✨ 时尚实惠', cat: 'A · 全车套餐', warranty: '全5年质保', films: [{ pos: '前挡', film: '炫影70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            1: { name: '💎 至尊全防护', cat: 'A · 全车套餐', priceOld: '¥12,800', priceNew: '¥9,440', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }, { pos: '后门+后挡', film: '钻石25' }] },
+            2: { name: '💫 至尊豪华', cat: 'A · 全车套餐', priceOld: '¥7,200', priceNew: '¥5,160', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['水晶30', '水晶15'] }] },
+            3: { name: '🔮 至尊标准', cat: 'A · 全车套餐', priceOld: '¥6,800', priceNew: '¥4,860', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钛金16' }, { pos: '后门+后挡', film: '钛金16' }] },
+            4: { name: '⚡ 至尊经济', cat: 'A · 全车套餐', priceOld: '¥5,200', priceNew: '¥3,760', warranty: '前挡10年+侧后5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            5: { name: '🔷 顶级尊享', cat: 'A · 全车套餐', priceOld: '¥5,500', priceNew: '¥3,960', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['水晶30', '水晶15'] }] },
+            6: { name: '🌟 顶级标准', cat: 'A · 全车套餐', priceOld: '¥3,600', priceNew: '¥2,560', warranty: '前挡10年+侧后5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            7: { name: '✨ 时尚实惠', cat: 'A · 全车套餐', priceOld: '¥2,300', priceNew: '¥1,660', warranty: '全5年质保', films: [{ pos: '前挡', film: '炫影70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
             // B. 混搭定制
-            8: { name: '至尊VIP定制', cat: 'B · 混搭定制套餐', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
-            9: { name: '至尊前排优享', cat: 'B · 混搭定制套餐', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
-            10: { name: '顶级前排优享', cat: 'B · 混搭定制套餐', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            8: { name: '至尊VIP定制', cat: 'B · 混搭定制套餐', priceOld: '¥7,800', priceNew: '¥5,654', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            9: { name: '至尊前排优享', cat: 'B · 混搭定制套餐', priceOld: '¥5,900', priceNew: '¥4,227', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
+            10: { name: '顶级前排优享', cat: 'B · 混搭定制套餐', priceOld: '¥4,200', priceNew: '¥3,027', warranty: '前排10年+后排5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }, { pos: '后门+后挡', film: ['炫影30', '炫影15'] }] },
             // C. 半车套餐
-            11: { name: '至尊半车·全防护', cat: 'C · 半车套餐（前挡+前门）', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }] },
-            12: { name: '至尊半车·豪华', cat: 'C · 半车套餐（前挡+前门）', warranty: '全10年质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
-            13: { name: '至尊半车·标准', cat: 'C · 半车套餐（前挡+前门）', warranty: '全10年质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钛金16' }] },
-            14: { name: '至尊半车·经济', cat: 'C · 半车套餐（前挡+前门）', warranty: '前挡10年+前门5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
-            15: { name: '顶级半车·尊享', cat: 'C · 半车套餐（前挡+前门）', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
-            16: { name: '顶级半车·标准', cat: 'C · 半车套餐（前挡+前门）', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: '钛金16' }] },
-            17: { name: '顶级半车·经济', cat: 'C · 半车套餐（前挡+前门）', warranty: '前挡10年+前门5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
-            18: { name: '时尚半车套餐', cat: 'C · 半车套餐（前挡+前门）', warranty: '全5年质保', films: [{ pos: '前挡', film: '炫影70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
+            11: { name: '至尊半车·全防护', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥7,000', priceNew: '¥5,067', warranty: '全10年双重质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钻石25' }] },
+            12: { name: '至尊半车·豪华', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥5,000', priceNew: '¥3,640', warranty: '全10年质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
+            13: { name: '至尊半车·标准', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥4,800', priceNew: '¥3,540', warranty: '全10年质保', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: '钛金16' }] },
+            14: { name: '至尊半车·经济', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥4,400', priceNew: '¥3,173', warranty: '前挡10年+前门5年', films: [{ pos: '前挡', film: '钻石70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
+            15: { name: '顶级半车·尊享', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥3,400', priceNew: '¥2,440', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
+            16: { name: '顶级半车·标准', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥3,200', priceNew: '¥2,340', warranty: '全10年质保', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: '钛金16' }] },
+            17: { name: '顶级半车·经济', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥2,700', priceNew: '¥1,973', warranty: '前挡10年+前门5年', films: [{ pos: '前挡', film: '水晶80' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
+            18: { name: '时尚半车套餐', cat: 'C · 半车套餐（前挡+前门）', priceOld: '¥1,500', priceNew: '¥1,073', warranty: '全5年质保', films: [{ pos: '前挡', film: '炫影70' }, { pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] },
             // D. 只贴前挡
-            19: { name: '💎 至尊前挡', cat: 'D · 只贴前挡', warranty: '10年双重质保', films: [{ pos: '前挡', film: '钻石70' }] },
-            20: { name: '🔷 顶级前挡', cat: 'D · 只贴前挡', warranty: '10年质保', films: [{ pos: '前挡', film: '水晶80' }] },
-            21: { name: '✨ 时尚前挡', cat: 'D · 只贴前挡', warranty: '5年质保', films: [{ pos: '前挡', film: '炫影70' }] },
+            19: { name: '💎 至尊前挡', cat: 'D · 只贴前挡', priceOld: '¥3,980', priceNew: '¥2,880', warranty: '10年双重质保', films: [{ pos: '前挡', film: '钻石70' }] },
+            20: { name: '🔷 顶级前挡', cat: 'D · 只贴前挡', priceOld: '¥2,320', priceNew: '¥1,680', warranty: '10年质保', films: [{ pos: '前挡', film: '水晶80' }] },
+            21: { name: '✨ 时尚前挡', cat: 'D · 只贴前挡', priceOld: '¥1,080', priceNew: '¥780', warranty: '5年质保', films: [{ pos: '前挡', film: '炫影70' }] },
             // E. 只贴前门
-            22: { name: '💎 至尊前门', cat: 'E · 只贴前门（两扇侧窗）', warranty: '10年质保', films: [{ pos: '前门（2扇）', film: '钻石25' }] },
-            23: { name: '🔷 顶级前门', cat: 'E · 只贴前门（两扇侧窗）', warranty: '10年质保', films: [{ pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
-            24: { name: '✨ 时尚前门', cat: 'E · 只贴前门（两扇侧窗）', warranty: '5年质保', films: [{ pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] }
+            22: { name: '💎 至尊前门', cat: 'E · 只贴前门（两扇侧窗）', priceOld: '¥3,700', priceNew: '¥2,680', warranty: '10年质保', films: [{ pos: '前门（2扇）', film: '钻石25' }] },
+            23: { name: '🔷 顶级前门', cat: 'E · 只贴前门（两扇侧窗）', priceOld: '¥1,050', priceNew: '¥760', warranty: '10年质保', films: [{ pos: '前门（2扇）', film: ['水晶30', '水晶15'] }] },
+            24: { name: '✨ 时尚前门', cat: 'E · 只贴前门（两扇侧窗）', priceOld: '¥400', priceNew: '¥293', warranty: '5年质保', films: [{ pos: '前门（2扇）', film: ['炫影30', '炫影15'] }] }
         };
 
         // ===== 弹窗逻辑 =====
@@ -1357,6 +1378,7 @@
         var modalClose = document.getElementById('pkgModalClose');
         var modalCat = document.getElementById('pkgModalCat');
         var modalTitle = document.getElementById('pkgModalTitle');
+        var modalPrice = document.getElementById('pkgModalPrice');
         var modalFilms = document.getElementById('pkgModalFilms');
         var modalFooter = document.getElementById('pkgModalFooter');
 
@@ -1414,6 +1436,7 @@
             if (!pkg) return;
             modalCat.textContent = pkg.cat;
             modalTitle.textContent = pkg.name;
+            modalPrice.innerHTML = '<span class="pkg-modal-price-old">' + pkg.priceOld + '</span><span class="pkg-modal-price-new">' + pkg.priceNew + '</span>';
             var filmsHtml = '';
             pkg.films.forEach(function (item) {
                 var isArr = Array.isArray(item.film);

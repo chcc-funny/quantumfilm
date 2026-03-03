@@ -386,11 +386,20 @@ section {
   }
 
   section {
-    padding: 50px 0;
+    padding: 30px 0;
+  }
+
+  .section-header {
+    margin-bottom: 25px;
   }
 
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
   }
 }
 
@@ -702,6 +711,33 @@ section {
   color: #374151;
 }
 
+/* 移动端表格压缩优化 */
+@media (max-width: 768px) {
+  .quantum-table {
+    min-width: 600px;
+    font-size: 0.75rem;
+  }
+
+  .quantum-table th {
+    padding: 8px 6px;
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .quantum-table td {
+    padding: 8px 6px;
+    line-height: 1.4;
+  }
+
+  .price-old {
+    font-size: 0.7rem;
+  }
+
+  .price-new {
+    font-size: 0.85rem;
+  }
+}
+
 .quantum-table tr:nth-child(even) td {
   background-color: #F9FAFB;
 }
@@ -839,15 +875,179 @@ section {
 @media (max-width: 768px) {
   .faq-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px !important;
+  }
+
+  .faq-item {
+    padding: 16px !important;
+  }
+
+  .faq-item h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .faq-item p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding-left: 24px;
   }
 
   .process-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .process-img {
+    height: 160px;
+  }
+
+  .process-content {
+    padding: 18px !important;
+  }
+
+  .process-card h3 {
+    font-size: 1rem;
+  }
+
+  .process-card p {
+    font-size: 0.85rem;
   }
 
   .feature-item,
   .feature-item:nth-child(even) {
     flex-direction: column;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+
+  .feature-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .feature-content p {
+    font-size: 0.95rem;
+  }
+
+  /* 推荐卡片紧凑化 */
+  .recommendation-banner {
+    padding: 20px !important;
+    min-height: 300px;
+  }
+
+  .recommend-content {
+    padding: 18px !important;
+  }
+
+  .recommend-content h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .recommend-content p {
+    font-size: 0.9rem !important;
+    margin-bottom: 18px !important;
+  }
+
+  .recommend-content > div {
+    gap: 10px !important;
+  }
+
+  .recommend-content > div > div {
+    padding: 12px !important;
+    border-radius: 8px !important;
+  }
+
+  .recommend-content h4 {
+    font-size: 0.9rem !important;
+    margin-bottom: 3px !important;
+  }
+
+  .recommend-content span {
+    font-size: 0.78rem !important;
+  }
+
+  .recommend-content strong {
+    font-size: 0.95rem !important;
+  }
+
+  /* 参数表格区域压缩 */
+  .quantum-glass-light {
+    padding: 18px !important;
+  }
+
+  .quantum-glass-light h3 {
+    font-size: 1.1rem !important;
+    margin: 20px 0 12px !important;
+  }
+
+  .quantum-glass-light h3:first-of-type {
+    margin-top: 0 !important;
+  }
+
+  /* Hero区域优化 */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 信任卡片压缩 */
+  .trust-card {
+    padding: 20px 15px !important;
+  }
+
+  .trust-card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+  }
+
+  .trust-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+  }
+
+  .trust-card p {
+    font-size: 0.85rem;
+  }
+
+  /* 优势列表压缩 */
+  .advantage-item {
+    padding: 12px 15px !important;
+    gap: 12px;
+  }
+
+  .advantage-item span {
+    font-size: 1.2rem !important;
+  }
+
+  .advantage-item strong {
+    font-size: 0.95rem;
+  }
+
+  .advantage-item p {
+    font-size: 0.82rem !important;
+    margin-top: 3px !important;
   }
 }
 
