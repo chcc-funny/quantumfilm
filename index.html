@@ -243,6 +243,48 @@
             background: rgba(30, 138, 154, 0.28) !important;
         }
 
+        /* 列表行内点击指示器（纯CSS，不挤压原内容） */
+        #tab-pricing .quantum-table tbody td:nth-child(2) {
+            position: relative;
+            padding-right: 72px; /* 为提示按钮预留空间，避免与长文字重叠 */
+        }
+
+        #tab-pricing .quantum-table tbody td:nth-child(2)::after {
+            content: "点击查看 ›";
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.65rem;
+            color: var(--cyan-deep);
+            border: 1px solid rgba(94, 234, 212, 0.4);
+            padding: 3px 8px;
+            border-radius: 12px;
+            background: rgba(94, 234, 212, 0.08);
+            transition: all 0.25s ease;
+            pointer-events: none;
+            opacity: 0.85;
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0.3); }
+            70% { box-shadow: 0 0 0 4px rgba(94, 234, 212, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(94, 234, 212, 0); }
+        }
+
+        #tab-pricing .quantum-table tbody tr:hover td:nth-child(2)::after {
+            background: rgba(94, 234, 212, 0.25);
+            border-color: rgba(94, 234, 212, 0.9);
+            color: #fff;
+            opacity: 1;
+            box-shadow: 0 0 10px rgba(94, 234, 212, 0.4);
+            right: 8px;
+            animation: none; /* 悬停时停止脉冲 */
+        }
+
         .pkg-click-hint {
             font-size: 0.72rem;
             color: var(--cyan-deep);
